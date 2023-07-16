@@ -10,7 +10,7 @@ for letter in chosen_word:
 
 
 guess = input("Guess a letter:").lower()
-for letter in chosen_word:
+for position in range(len(chosen_word)):
     if letter == guess:
         print("Right")
     else:
