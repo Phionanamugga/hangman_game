@@ -1,6 +1,7 @@
 #Creates the hangman game
 import random
-word_list = ["ardvark", "baboon", "camel"]
+word_list = ["abruptly", "absurd", "abyss", "affix", "axion","azure", "bagpipes"
+             "ardvark", "baboon", "camel", "bikini", "bayou", "blizzard", "beekeeper"]
 chosen_word = random.choice(word_list)
 print(f'Psst, the solution is {chosen_word}.')
 display = []
@@ -22,3 +23,10 @@ while not end_of_game:
     if "_" not in display:
         end_of_game = True
         print("You win")
+
+    lives = 6
+    if guess not in chosen_word:
+        lives -= 1
+        if lives == 0:
+            end_of_game = True
+            print("You lose")
